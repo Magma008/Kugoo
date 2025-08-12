@@ -28,10 +28,10 @@ a {
     align-items: center;
 }
 
-/* body {
+body {
     position: relative;
     min-height: 100vh;
-} */
+}
 
 .upperLeft ul {
     width: max-content;
@@ -62,7 +62,8 @@ a {
     margin: 15px 0px;
     position: sticky;
     top: 0;
-    /* z-index: 11; */
+    left: 0;
+    z-index: 11;
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(3px);
 }
@@ -707,7 +708,7 @@ a {
     color: #7378ee;
 }
 
-.categoryCards center{
+.categoryCards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -874,7 +875,7 @@ a {
     margin: 40px 0px;
 }
 
-.reviewTitle a{
+.reviewTitle a {
     color: #7378ee;
     margin-top: 20px;
 }
@@ -889,13 +890,13 @@ a {
 .reviewGrid {
     display: inline-flex;
     gap: 15px;
-    animation: scrollX 20s linear infinite;
+    animation: scrollX 10s steps(5) infinite;
 }
 
 .reviewGridRev {
     display: inline-flex;
     gap: 15px;
-    animation: scrollXRev 20s linear infinite;   
+    animation: scrollXRev 20s linear infinite;
 }
 
 /* *========================================================* */
@@ -938,7 +939,7 @@ a {
     top: 20%;
     right: 26%;
     transform: translate(-20% -26%);
-} 
+}
 
 .vdImg {
     aspect-ratio: 5/2;
@@ -949,6 +950,7 @@ a {
     object-position: center;
     object-fit: cover;
 }
+
 /* +---------------------------------------------------------+*/
 
 /* *------------------ New Cards Section ------------------* */
@@ -984,29 +986,270 @@ a {
 .newCard {
     background: #f4f7fc;
     border-radius: 10px;
-    width: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    overflow: hidden;
 }
 
-.nwCardImg {
-    aspect-ratio: 16/9;
+.nwCardImg img {
     width: 100%;
-}
-
-.nwCardImg  img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
 }
 
 /* *-------------------------------------------------------* */
 
+/* @=================== DropDown Section ===================@ */
+
+.dropDown {
+    margin: 40px 100px;
+}
+
+.dropTitle {
+    margin: 20px 0px;
+    font-size: 33px;
+}
+
+.dropDownMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.drop {
+    border-bottom: 2px solid #f4f7fc;
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dropText {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.dropText img {
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.drop p {
+    font-size: 16px;
+}
+
+.rotated {
+    transform: rotate(-90deg) !important;
+}
+
+.dropMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 0;
+    transition: all .3s ease;
+    overflow: hidden;
+}
+
+
+/* @========================================================@ */
+
+/* ?-------------------- Emails Section --------------------? */
+
+.emails {
+    margin-top: 30px;
+    background-color: #7378ee;
+}
+
+.emailFooter {
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.emailsGroup {
+    width: 40%;
+}
+
+.emailsGroup form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.emailsGroup input {
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.emailsGroup button,
+.emailsGroup input {
+    padding: 12px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.emailsGroup button {
+    color: #7378ee;
+    background-color: white;
+    border: 1.5px solid white;
+    padding: 12px 16px;
+    cursor: pointer;
+}
+
+.emailsGroup input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ?--------------------------------------------------------? */
+
+/* *==================== Footer Section ====================* */
+
+.footer {
+    background: #f4f7fc;
+    padding: 30px 0px;
+}
+
+.footerLinks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.leftDiv ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.leftDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+
+.leftDiv:nth-child(3) {
+    display: flex;
+    justify-content: end;
+    padding-bottom: 55px;
+    height: 100%;
+    flex-direction: column;
+}
+
+.rightDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+    width: max-content;
+}
+
+.rightDiv .innerFooter {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.innerFooter h5 {
+    font-weight: normal;
+}
+
+.rightDiv2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 25px;
+}
+
+.rightA {
+    color: #7378ee;
+    text-align: end;
+}
+
+.footerImgs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 20px;
+    padding: 20px 0px;
+    align-items: center;
+    border-bottom: 1.5px solid rgb(175, 175, 175);
+    border-top: 1.5px solid rgb(175, 175, 175);
+}
+
+.sMedia {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: white;
+    padding: 6px 20px;
+    width: fit-content;
+}
+
+.sText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 18px;
+}
+
+.footerIcons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.iconText {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.iconsRight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.miniIcons img {
+    padding: 8px;
+    background: white;
+    border-radius: 3px;
+}
+
+.miniIcons {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.onlineIcons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* *========================================================* */
+
 /* # ------------------- Responsive Design  ------------------- # */
 @media screen and (max-width: 1400px) {
-    .categoryCards center{
+    .categoryCards {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
@@ -1074,6 +1317,23 @@ a {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .emailFooter h2 {
+        font-size: 20px;
+    }
+
+    .emailsGroup input {
+        width: 100%;
+    }
+
+    .emailsGroup {
+        width: 50%;
+    }
+
+    .footerIcons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -1122,6 +1382,15 @@ a {
     .iconCardTitle h1 {
         font-size: 20px;
     }
+
+    .emailFooter {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .emailsGroup {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 630px) {
@@ -1144,6 +1413,25 @@ a {
 
     .iconCardsGrid {
         grid-template-columns: 1fr;
+    }
+
+    .dropDown {
+        margin: 40px 0px;
+    }
+
+    .dropDown h1 {
+        font-size: 25px;
+    }
+
+    .categoryCards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .iconCart {
+        min-height: 170px;
     }
 
 }
@@ -1193,6 +1481,44 @@ a {
     .newCards h1 {
         font-size: 20px;
     }
+
+    .drop p {
+        font-size: 14px;
+    }
+
+    .newCardGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .aboutTexts h1 {
+        font-size: 20px;
+    }
+
+    .emailsGroup {
+        transform: scale(0.8);
+    }
+
+    .emailsGroup button {
+        padding: 12px;
+    }
+
+    .emailsGroup input {
+        width: 100%;
+    }
+
+    .emailsGroup {
+        padding: 0px;
+    }
+
+    .iconsRight {
+        flex-direction: column;
+    }
+
+    .miniIcons {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 /* ! =========================================================== ! */
@@ -1203,6 +1529,7 @@ a {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -1212,6 +1539,7 @@ a {
     0% {
         transform: translateX(-50%);
     }
+
     100% {
         transform: translateX(0);
     }
