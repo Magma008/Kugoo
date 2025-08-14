@@ -16,19 +16,18 @@ dropClose.forEach((item) => {
         if (dropDown.style.height === "" || dropDown.style.height === "0px") {
             dropDown.style.height = dropDown.scrollHeight + "px"
 
-            dropDown.addEventListener("transitioned", 
-            function setAuto() {
-                dropDown.style.height = "auto"                
-            })
+            const setAuto = () => {
+                dropDown.style.height = "auto"
+            }
 
-            dropDown.removeEventListener("transitioned", 
-            function setAuto() {
-                dropDown.style.height = "auto"                
-            })
+            dropDown.addEventListener("transitioned", setAuto)
+
+            dropDown.removeEventListener("transitioned",  setAuto)
         } else {
             dropDown.style.height = dropDown.scrollHeight + "px"
             dropDown.offsetHeight;
             dropDown.style.height = "0px"
         }
+        console.log(dropDown.scrollHeight);
     })
 })
